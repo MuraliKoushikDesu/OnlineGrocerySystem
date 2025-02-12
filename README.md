@@ -101,11 +101,11 @@ cd Online-Grocery-System
 ## 📬 Contact 
 **If you have any questions or feedback, feel free to reach out:**
 
-- **Email:** desumuralikoushik@gmail.com
+- 📧 **Email**: desumuralikoushik@gmail.com
+  
+- 💼 **LinkedIn**: https://www.linkedin.com/in/muralikoushikdesu/
 
-- **LinkedIn:** https://www.linkedin.com/in/muralikoushikdesu/
-
-- **GitHub:** https://github.com/MuraliKoushikDesu
+- 👨‍💻**GitHub:** https://github.com/MuraliKoushikDesu
 
 ---
 
