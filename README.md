@@ -4,13 +4,13 @@ Welcome to the **Online Grocery System** project! This is a full-stack web appli
 
 ---
 
-## **Screenshots**
+## **📸 Screenshots**
 ![image](https://github.com/user-attachments/assets/7bbe3f27-e929-433e-8923-85091988c83b)
 ---
 ![image](https://github.com/user-attachments/assets/e2e4b692-7a25-4645-b918-f09cb9827440)
 
 ---
-## Features  
+## 📝 Features  
 - **User-Friendly Interface:** Intuitive design for easy navigation and shopping.  
 - **Product Catalog:** Displays a wide range of grocery items with categories and filters.  
 - **Shopping Cart:** Allows users to add, remove, and manage items before checkout.  
@@ -19,7 +19,7 @@ Welcome to the **Online Grocery System** project! This is a full-stack web appli
 
 ---
 
-## Technologies Used  
+## 👨‍💻 Technologies Used  
 - **Frontend:** Angular, TypeScript, HTML, SCSS
 - **Backend:** .NET C#
 - **Database:** MongoDB
@@ -28,7 +28,7 @@ Welcome to the **Online Grocery System** project! This is a full-stack web appli
 
 ---
 
-## Setup Instructions
+## ⚠️ Setup Instructions
 **Prerequisites**
 - Node.js (for Angular frontend)
 - .NET SDK (for backend)
@@ -76,7 +76,7 @@ cd Online-Grocery-System
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 **Contributions are welcome! If you’d like to contribute to this project, please follow these steps:**
 
@@ -90,7 +90,7 @@ cd Online-Grocery-System
 
 ---
 
-## Acknowledgments
+## 📜 Acknowledgments
 
  - University of Central Missouri for allowing me to work on this project as part of my senior coursework.
 
@@ -98,7 +98,7 @@ cd Online-Grocery-System
 
 ---
 
-## Contact 
+## 📬 Contact 
 **If you have any questions or feedback, feel free to reach out:**
 
 - **Email:** desumuralikoushik@gmail.com
@@ -109,4 +109,4 @@ cd Online-Grocery-System
 
 ---
 
-**Thank you for checking out the Online Grocery System project! 🚀**
+**🏫 Thank you for checking out the Online Grocery System project! 🚀**
