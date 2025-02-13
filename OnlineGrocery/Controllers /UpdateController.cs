@@ -3,7 +3,6 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using OnlineGrocery.Models;
 using OnlineGrocery.services;
-
 namespace OnlineGrocery.Controllers
 {
     [Route("api/[controller]")]
@@ -20,20 +19,17 @@ namespace OnlineGrocery.Controllers
         {
             string email = userData.filter;
             string type = userData.role;
-
             if (type == "Admins" || type == "DeliveryExecutives")
             {
                 try
                 {
                     await _mongoConnService.UpdateDetails(email, userData.updateData, type);
-
                 }
                 catch (Exception ex)
                 {
                     var result1 = new BsonDocument("error", ex.Message);
                     return result1.ToString();
                 }
-
             }
             else
             {
@@ -48,11 +44,8 @@ namespace OnlineGrocery.Controllers
                     return result1.ToString();
                 }
             }
-
             var result = new BsonDocument("success", "Added");
             return result.ToString();
-
-
         }
         [HttpPost("updateCart")]
         public async Task<String> updateCart(String id, int quantity)
@@ -69,14 +62,12 @@ namespace OnlineGrocery.Controllers
                 var result = new BsonDocument("error", ex.Message);
                 return result.ToString();
             }
-
         }
         [HttpPost("updateProducts")]
         public async Task<String> updateProductDetails(ProductsModelUpdate productDetails)
         {
             try
-            {
-                 
+            {   
                 _mongoConnService.UpdateProductDetails(productDetails);
                 var result = new BsonDocument("success", "Updated");
                 return result.ToString();
@@ -86,9 +77,7 @@ namespace OnlineGrocery.Controllers
                 var result = new BsonDocument("error", ex.Message);
                 return result.ToString();
             }
-
         }
-
         [HttpPost("updateOrderStatus")]
         public async Task<String> updateOrderStatus([FromBody] UpdateOrderStatus updateDetails)
         {
@@ -103,7 +92,6 @@ namespace OnlineGrocery.Controllers
                 var result = new BsonDocument("error", ex.Message);
                 return result.ToString();
             }
-
         }
         //[HttpPost("DeleteProduct")]
         //public async Task<String> deleteProduct(String Id)
