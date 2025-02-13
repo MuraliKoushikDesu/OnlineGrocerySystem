@@ -2,28 +2,22 @@
 using MongoDB.Bson;
 using OnlineGrocery.Models;
 using OnlineGrocery.services;
-
 namespace OnlineGrocery.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UserDetailsController : Controller
-    {
-        
-        
+    {   
         private readonly MongoConnectionService _mongoConnService;
-
         public UserDetailsController(MongoConnectionService mongoConnService)
         {
             _mongoConnService = mongoConnService;
         }
-
         [HttpGet("get")]
         public String GetUsers (String UserEmail )
         {
             try
             {
-
                 var user = _mongoConnService.GetUserByUseremail(UserEmail);
                 return user;
             }
@@ -46,7 +40,6 @@ namespace OnlineGrocery.Controllers
                 var result = new BsonDocument("error", ex.Message);
                 return result.ToString();
             }
-            
         }
         [HttpPost("removeFromCart")]
         public async Task<String> removeFromCart(String id)
@@ -54,18 +47,15 @@ namespace OnlineGrocery.Controllers
             try
             {
                 object _id = ObjectId.Parse(id);
-
                 await _mongoConnService.RemoveFromCart(_id);
                 var result = new BsonDocument("success", "Removed");
                 return result.ToString();
-
             }
             catch (Exception ex)
             {
                 var result = new BsonDocument("error", ex.Message);
                 return result.ToString();
             }
-
         }
         [HttpGet("getDeliveredOrders")]
         public string getDeliveredOrders(String UserEmail)
@@ -89,16 +79,12 @@ namespace OnlineGrocery.Controllers
             try
             {
                 var details = _mongoConnService.GetAllProducts();
-                return details;
-                 
-
+                return details;   
             }
             catch (Exception ex)
             {
                 return null;
             }
         }
-
-        
     }
 }
