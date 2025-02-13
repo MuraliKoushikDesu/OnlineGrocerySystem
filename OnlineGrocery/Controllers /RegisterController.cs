@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using OnlineGrocery.Models;
 using OnlineGrocery.services;
-
 namespace OnlineGrocery.Controllers
 {
     [Route("api/[controller]")]
@@ -11,22 +10,18 @@ namespace OnlineGrocery.Controllers
     public class RegisterController : ControllerBase
     {
         private readonly MongoConnectionService _mongoConnService;
-
         public RegisterController(MongoConnectionService mongoConnService)
         {
             _mongoConnService = mongoConnService;
         }
-
         [HttpPost("newUser/deliveryExec")]
         public async Task<String> AddDeliveryExecutive([FromBody]InsertDeliveryExecutives  deliveryExcData)
         {
             try
             {
-              
                 await _mongoConnService.InsertDocumentAsync("DeliveryExecutives", deliveryExcData.ToBsonDocument());
                 var result = new BsonDocument("success", "Added");
-                return result.ToString();
-                
+                return result.ToString();     
             }
             catch (Exception ex)
             {
@@ -34,14 +29,12 @@ namespace OnlineGrocery.Controllers
                 return result.ToString();
             }
         }
-
         [HttpPost("newUser/customer")]  
         public async Task<String> AddCustomer([FromBody] InsertCustomer customerData)
         {
             try
             {
-                // Example: Inserting a document into MongoDB
-                
+                // Example: Inserting a document into MongoDB     
                 await _mongoConnService.InsertDocumentAsync("Customers", customerData.ToBsonDocument());
                 var result = new BsonDocument("success", "Added");
                 return result.ToString();
@@ -58,14 +51,11 @@ namespace OnlineGrocery.Controllers
             try
             {
                 // Example: Inserting a document into MongoDB
-
-                var details =  _mongoConnService.GetAllExecutives();
-               
+                var details =  _mongoConnService.GetAllExecutives();  
                 return details;
             }
             catch (Exception ex)
-            {
-                
+            { 
                 return null;
             }
         }
@@ -75,7 +65,6 @@ namespace OnlineGrocery.Controllers
             try
             {
                 // Example: Inserting a document into MongoDB
-
                 await _mongoConnService.ApproveDeliveryExecutive(executiveEmail,approve);
                 string status = null;
                 if (approve == 0)
@@ -93,7 +82,5 @@ namespace OnlineGrocery.Controllers
                 return result.ToString();
             }
         }
-
-
     }
 }
